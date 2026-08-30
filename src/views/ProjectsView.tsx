@@ -1,258 +1,103 @@
 "use client";
 
-import { useEffect, RefObject } from "react";
+import { useMemo, useState } from "react";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { Project } from "@/types";
-
-// Project data with proper typing
-const projects: Project[] = [
-  {
-    id: "neural-nexus",
-    title: "Neural Nexus Dashboard",
-    description: "A real-time telemetry monitoring system for distributed neural networks, utilizing WebGL for high-performance data rendering.",
-    tags: [{ name: "React" }, { name: "Node.js" }, { name: "Three.js" }],
-    featured: true,
-    category: "FEATURED",
-    link: "#"
-  },
-  {
-    id: "ethereal-commerce",
-    title: "Ethereal Commerce",
-    description: "Bespoke e-commerce architecture designed for ultra-low latency and seamless checkout transitions.",
-    tags: [{ name: "Next.js" }, { name: "Stripe" }],
-    featured: false,
-    link: "#"
-  },
-  {
-    id: "vanguard-engine",
-    title: "Vanguard Engine",
-    description: "High-performance asset processing engine compiled to WebAssembly for browser-side heavy lifting.",
-    tags: [{ name: "Rust" }, { name: "WASM" }],
-    featured: false,
-    link: "#"
-  },
-  {
-    id: "omnibridge-api",
-    title: "OmniBridge API",
-    description: "A unified microservices mesh capable of handling 50k+ requests per second with sub-millisecond overhead.",
-    tags: [{ name: "Go" }, { name: "gRPC" }, { name: "AWS" }],
-    featured: false,
-    link: "#"
-  }
-];
+import ProjectCard from "@/components/ProjectCard";
+import { projects } from "@/data/projects";
 
 export default function ProjectsView() {
-  useEffect(() => {
-    // Subtle micro-interaction for project cards
-    document.querySelectorAll(".project-card").forEach((card: Element) => {
-      card.addEventListener("mousemove", (e: Event) => {
-        const mouseEvent = e as MouseEvent;
-        const rect = card.getBoundingClientRect();
-        const x = mouseEvent.clientX - rect.left;
-        const y = mouseEvent.clientY - rect.top;
-        (card as HTMLElement).style.setProperty("--mouse-x", `${x}px`);
-        (card as HTMLElement).style.setProperty("--mouse-y", `${y}px`);
-      });
-    });
-  }, []);
+  const [query, setQuery] = useState("");
 
-  const featuredProject = projects.find((p: Project) => p.featured);
-  const otherProjects = projects.filter((p: Project) => !p.featured);
+  const filtered = useMemo(() => {
+    const needle = query.trim().toLowerCase();
+    if (!needle) return projects;
+    return projects.filter((project) => {
+      const haystack = [
+        project.title,
+        project.subtitle,
+        project.description,
+        project.category,
+        project.company ?? "",
+        project.liveUrl ?? "",
+        ...project.tags,
+      ]
+        .join(" ")
+        .toLowerCase();
+      return haystack.includes(needle);
+    });
+  }, [query]);
 
   return (
     <>
       <Navbar />
       <main className="pt-32 pb-stack-lg">
-        <header className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-16">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
+        <header className="mx-auto mb-12 max-w-container-max px-margin-mobile md:px-margin-desktop">
+          <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
             <div>
-              <span className="font-label-caps text-label-caps text-primary mb-4 block">
-                PORTFOLIO EXCELLENCE
+              <span className="mb-4 block font-label-caps text-label-caps text-primary">
+                {projects.length} PROJECTS
               </span>
-              <h1 className="font-headline-xl-mobile md:font-headline-xl text-headline-xl-mobile md:text-headline-xl">
+              <h1 className="font-headline-xl-mobile text-headline-xl-mobile md:font-headline-xl md:text-headline-xl">
                 Selected Projects
               </h1>
             </div>
             <div className="max-w-md">
               <p className="font-body-lg text-body-lg text-on-surface-variant">
-                A curated collection of engineered solutions where technical precision meets creative visual storytelling.
+                Product UIs and sites I designed, built, and shipped from this PC — each card
+                links out to the live website when I have one.
               </p>
             </div>
           </div>
+
+          <label className="relative mt-10 block w-full border border-outline-variant/20 bg-surface-container-low p-4 md:max-w-md">
+            <span className="sr-only">Search projects</span>
+            <input
+              type="search"
+              value={query}
+              onChange={(event) => setQuery(event.target.value)}
+              placeholder="Search stack, title, website..."
+              className="w-full border-0 border-b border-outline-variant bg-transparent px-1 py-2 font-code-sm text-code-sm text-on-surface outline-none placeholder:text-outline-variant/60 focus:border-primary"
+            />
+          </label>
         </header>
 
-        {/* Projects Bento/Grid Layout */}
-        <section className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-gutter">
-            {/* Large Featured Project */}
-            {featuredProject && (
-              <article className="lg:col-span-8 group project-card relative overflow-hidden bg-[#121212] border border-outline-variant/20 hover:border-primary transition-all duration-300">
-                <div className="aspect-video relative overflow-hidden">
-                  <div className="project-image w-full h-full bg-surface-container-high flex items-center justify-center text-on-surface-variant transition-transform duration-700 ease-out">
-                    <span className="font-code-sm">[Project Image]</span>
-                  </div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-60"></div>
-                  <div className="absolute top-6 right-6 flex gap-2">
-                    <span className="bg-surface-container-highest px-3 py-1 font-code-sm text-code-sm border border-outline-variant/30 text-primary">
-                      {featuredProject.category?.toUpperCase()}
-                    </span>
-                  </div>
-                </div>
-                <div className="p-8">
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {featuredProject.tags.map((tag) => (
-                      <span key={tag.name} className="font-label-caps text-[10px] uppercase tracking-widest px-2 py-1 bg-primary/10 border border-primary/20 text-primary">
-                        {tag.name}
-                      </span>
-                    ))}
-                  </div>
-                  <h3 className="font-headline-lg text-headline-lg mb-2">
-                    {featuredProject.title}
-                  </h3>
-                  <p className="font-body-md text-body-md text-on-surface-variant mb-6">
-                    {featuredProject.description}
-                  </p>
-                  <Link
-                    href={featuredProject.link || "#"}
-                    className="inline-flex items-center gap-2 font-label-caps text-label-caps text-primary hover:gap-4 transition-all"
-                  >
-                    VIEW CASE STUDY{" "}
-                    <span className="material-symbols-outlined">arrow_forward</span>
-                  </Link>
-                </div>
-              </article>
-            )}
-
-            {/* Other Projects */}
-            {otherProjects.map((project: Project, index: number) => {
-              if (index === 0) {
-                // Ethereal Commerce - Small card
-                return (
-                  <article key={project.id} className="lg:col-span-4 group project-card relative overflow-hidden bg-[#121212] border border-outline-variant/20 hover:border-primary transition-all duration-300 flex flex-col">
-                    <div className="h-64 relative overflow-hidden">
-                      <div className="project-image w-full h-full bg-surface-container-high flex items-center justify-center text-on-surface-variant transition-transform duration-700 ease-out">
-                        <span className="font-code-sm">[Project Image]</span>
-                      </div>
-                    </div>
-                    <div className="p-6 flex-grow">
-                      <div className="flex flex-wrap gap-2 mb-4">
-                        {project.tags.map((tag) => (
-                          <span key={tag.name} className="font-label-caps text-[10px] uppercase tracking-widest px-2 py-1 bg-primary/10 border border-primary/20 text-primary">
-                            {tag.name}
-                          </span>
-                        ))}
-                      </div>
-                      <h3 className="font-headline-lg text-[24px] mb-2 leading-tight">
-                        {project.title}
-                      </h3>
-                      <p className="font-body-md text-body-md text-on-surface-variant mb-6">
-                        {project.description}
-                      </p>
-                      <Link
-                        href={project.link || "#"}
-                        className="inline-flex items-center gap-2 font-label-caps text-label-caps text-primary hover:gap-4 transition-all mt-auto"
-                      >
-                        EXPLORE{" "}
-                        <span className="material-symbols-outlined">arrow_forward</span>
-                      </Link>
-                    </div>
-                  </article>
-                );
-              } else if (index === 1) {
-                // Vanguard Engine - Small card
-                return (
-                  <article key={project.id} className="lg:col-span-4 group project-card relative overflow-hidden bg-[#121212] border border-outline-variant/20 hover:border-primary transition-all duration-300 flex flex-col">
-                    <div className="h-64 relative overflow-hidden">
-                      <div className="project-image w-full h-full bg-surface-container-high flex items-center justify-center text-on-surface-variant transition-transform duration-700 ease-out">
-                        <span className="font-code-sm">[Project Image]</span>
-                      </div>
-                    </div>
-                    <div className="p-6 flex-grow">
-                      <div className="flex flex-wrap gap-2 mb-4">
-                        {project.tags.map((tag) => (
-                          <span key={tag.name} className="font-label-caps text-[10px] uppercase tracking-widest px-2 py-1 bg-primary/10 border border-primary/20 text-primary">
-                            {tag.name}
-                          </span>
-                        ))}
-                      </div>
-                      <h3 className="font-headline-lg text-[24px] mb-2 leading-tight">
-                        {project.title}
-                      </h3>
-                      <p className="font-body-md text-body-md text-on-surface-variant mb-6">
-                        {project.description}
-                      </p>
-                      <Link
-                        href={project.link || "#"}
-                        className="inline-flex items-center gap-2 font-label-caps text-label-caps text-primary hover:gap-4 transition-all mt-auto"
-                      >
-                        EXPLORE{" "}
-                        <span className="material-symbols-outlined">arrow_forward</span>
-                      </Link>
-                    </div>
-                  </article>
-                );
-              } else {
-                // OmniBridge API - Medium card
-                return (
-                  <article key={project.id} className="lg:col-span-8 group project-card relative overflow-hidden bg-[#121212] border border-outline-variant/20 hover:border-primary transition-all duration-300 md:flex">
-                    <div className="md:w-1/2 relative overflow-hidden min-h-[300px]">
-                      <div className="project-image w-full h-full bg-surface-container-high flex items-center justify-center text-on-surface-variant transition-transform duration-700 ease-out">
-                        <span className="font-code-sm">[Project Image]</span>
-                      </div>
-                    </div>
-                    <div className="p-8 md:w-1/2 flex flex-col justify-center">
-                      <div className="flex flex-wrap gap-2 mb-4">
-                        {project.tags.map((tag) => (
-                          <span key={tag.name} className="font-label-caps text-[10px] uppercase tracking-widest px-2 py-1 bg-primary/10 border border-primary/20 text-primary">
-                            {tag.name}
-                          </span>
-                        ))}
-                      </div>
-                      <h3 className="font-headline-lg text-headline-lg mb-2">
-                        {project.title}
-                      </h3>
-                      <p className="font-body-md text-body-md text-on-surface-variant mb-6">
-                        {project.description}
-                      </p>
-                      <Link
-                        href={project.link || "#"}
-                        className="inline-flex items-center gap-2 font-label-caps text-label-caps text-primary hover:gap-4 transition-all mt-auto"
-                      >
-                        VIEW PROJECT{" "}
-                        <span className="material-symbols-outlined">arrow_forward</span>
-                      </Link>
-                    </div>
-                  </article>
-                );
-              }
-            })}
-          </div>
+        <section className="mx-auto max-w-container-max px-margin-mobile md:px-margin-desktop">
+          {filtered.length === 0 ? (
+            <div className="border border-outline-variant/20 bg-surface-container-low p-12 text-center">
+              <p className="font-body-lg text-body-lg text-on-surface-variant">
+                No projects match that search.
+              </p>
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 gap-gutter md:grid-cols-2 xl:grid-cols-3">
+              {filtered.map((project) => (
+                <ProjectCard key={project.id} project={project} />
+              ))}
+            </div>
+          )}
         </section>
 
-        {/* CTA Section */}
-        <section className="mt-stack-lg max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
-          <div className="bg-surface-container-high p-stack-md flex flex-col items-center text-center border border-outline-variant/20">
-            <h2 className="font-headline-lg text-headline-lg mb-4">
-              Intrigued by the Craft?
-            </h2>
-            <p className="font-body-lg text-body-lg text-on-surface-variant mb-8 max-w-xl">
-              Let's discuss how we can build your next high-performance digital experience together.
+        <section className="mx-auto mt-stack-lg max-w-container-max px-margin-mobile md:px-margin-desktop">
+          <div className="flex flex-col items-center border border-outline-variant/20 bg-surface-container-high p-stack-md text-center">
+            <h2 className="mb-4 font-headline-lg text-headline-lg">Intrigued by the craft?</h2>
+            <p className="mb-8 max-w-xl font-body-lg text-body-lg text-on-surface-variant">
+              Need a bilingual dashboard, CRM, or marketing site? I can take it from design to deploy.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <button 
-                type="button"
-                className="bg-primary text-on-primary px-8 py-3 font-label-caps text-label-caps hover:scale-105 transition-transform"
+              <Link
+                href="/contact"
+                className="bg-primary px-8 py-3 font-label-caps text-label-caps text-on-primary transition-transform hover:scale-105"
               >
                 START A PROJECT
-              </button>
-              <button 
-                type="button"
-                className="border border-outline px-8 py-3 font-label-caps text-label-caps text-primary hover:bg-primary/5 transition-colors"
+              </Link>
+              <Link
+                href="/cv/Ah_Hamada_CV.pdf"
+                className="border border-outline px-8 py-3 font-label-caps text-label-caps text-primary transition-colors hover:bg-primary/5"
               >
                 DOWNLOAD CV
-              </button>
+              </Link>
             </div>
           </div>
         </section>

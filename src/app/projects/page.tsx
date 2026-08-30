@@ -2,8 +2,9 @@ import ProjectsView from "@/views/ProjectsView";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Projects | DEV_CORE",
-  description: "Explore my portfolio of engineered solutions and digital experiences.",
+  title: "Projects",
+  description:
+    "Ellwaa product UIs and personal Next.js sites Ahmed Hamada shipped from this PC.",
 };
 
 export default function ProjectsPage(): React.ReactElement {

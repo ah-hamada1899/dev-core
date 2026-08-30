@@ -26,15 +26,26 @@ const workSans = Work_Sans({
 
 // Metadata with proper typing
 export const metadata: Metadata = {
+  metadataBase: new URL("https://dev-core-kappa.vercel.app"),
   title: {
-    default: "DEV_CORE | Building Digital Experiences with Precision",
+    default: "Ahmed Hamada | Front-End Developer — DEV_CORE",
     template: "%s | DEV_CORE",
   },
-  description: "Full-stack engineer specializing in high-performance web applications, scalable cloud architecture, and clean maintainable codebases.",
-  keywords: ["Full Stack Developer", "Web Development", "React", "Next.js", "TypeScript", "AWS", "Portfolio"],
-  authors: [{ name: "DEV_CORE Engineering" }],
-  creator: "DEV_CORE Engineering",
-  publisher: "DEV_CORE Engineering",
+  description:
+    "Front-end developer in Giza, Egypt. React, Next.js, and TypeScript — bilingual product UIs, dashboards, CRM, and marketing sites.",
+  keywords: [
+    "Ahmed Hamada",
+    "Front-End Developer",
+    "React",
+    "Next.js",
+    "TypeScript",
+    "RTL",
+    "Portfolio",
+    "Giza",
+  ],
+  authors: [{ name: "Ahmed Hamada" }],
+  creator: "Ahmed Hamada",
+  publisher: "Ahmed Hamada",
   robots: {
     index: true,
     follow: true,
@@ -42,23 +53,25 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://devcore.engineering",
-    siteName: "DEV_CORE Engineering",
-    title: "DEV_CORE | Building Digital Experiences with Precision",
-    description: "Full-stack engineer specializing in high-performance web applications.",
+    url: "https://dev-core-kappa.vercel.app",
+    siteName: "DEV_CORE",
+    title: "Ahmed Hamada | Front-End Developer",
+    description:
+      "Bilingual product UIs, dashboards, and marketing sites built with React and Next.js.",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "DEV_CORE Engineering Portfolio",
+        alt: "Ahmed Hamada — DEV_CORE portfolio",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "DEV_CORE | Building Digital Experiences with Precision",
-    description: "Full-stack engineer specializing in high-performance web applications.",
+    title: "Ahmed Hamada | Front-End Developer",
+    description:
+      "Bilingual product UIs, dashboards, and marketing sites built with React and Next.js.",
     images: ["/og-image.png"],
   },
 };

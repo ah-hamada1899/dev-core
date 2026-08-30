@@ -5,6 +5,8 @@ export interface NavLink {
 }
 
 // ============ Project Types ============
+export type ProjectKind = "work" | "personal";
+
 export interface ProjectTag {
   name: string;
   id?: string;
@@ -13,19 +15,22 @@ export interface ProjectTag {
 export interface Project {
   id: string;
   title: string;
+  subtitle: string;
   description: string;
-  image?: string;
-  imageAlt?: string;
-  tags: ProjectTag[];
-  featured?: boolean;
-  category?: string;
-  link?: string;
-  year?: number;
-}
-
-export interface FeaturedProject extends Project {
+  longDescription: string;
+  highlights: string[];
+  tags: string[];
+  kind: ProjectKind;
   category: string;
-  imageAlt: string;
+  featured?: boolean;
+  year: string;
+  company?: string;
+  role: string;
+  liveUrl?: string;
+  githubUrl?: string;
+  image?: string;
+  icon: string;
+  accent: "lavender" | "gold" | "teal" | "rose" | "slate" | "amber";
 }
 
 // ============ Skill Types ============

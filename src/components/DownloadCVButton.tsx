@@ -38,7 +38,7 @@ export default function DownloadCVButton({
     }
 
     if (useFallback) {
-      window.open('/cv/DevCore_CV.pdf', '_blank');
+      window.open('/cv/Ah_Hamada_CV.pdf', '_blank');
       return;
     }
     
