@@ -1,33 +1,36 @@
 "use client";
 
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 import { useDownloadCV } from "@/hooks/useDownloadCV";
 import { DownloadCVButtonProps } from "@/types";
 
-export default function DownloadCVButton({ 
+export default function DownloadCVButton({
   className = "",
   variant = "primary",
   children,
   disabled = false,
   onClick,
-  ariaLabel = "Download CV"
+  ariaLabel,
 }: DownloadCVButtonProps): React.ReactElement {
   const { downloadCV, status, error, progress } = useDownloadCV();
   const [useFallback, setUseFallback] = useState<boolean>(false);
+  const t = useTranslations("cv");
 
-  const baseStyles: string = "px-8 py-4 font-label-caps text-label-caps transition-all duration-300 inline-flex items-center justify-center gap-2";
-  
-  const variantStyles: Record<'primary' | 'secondary', string> = {
-    primary: "bg-primary text-on-primary hover:bg-primary-fixed active:scale-95",
-    secondary: "border border-outline-variant text-on-surface hover:border-primary hover:text-primary"
+  const baseStyles: string =
+    "min-h-12 px-8 py-4 font-label-caps text-label-caps transition-colors duration-200 inline-flex w-full items-center justify-center gap-2 rounded-sm sm:w-auto";
+
+  const variantStyles: Record<"primary" | "secondary", string> = {
+    primary: "btn-primary",
+    secondary: "btn-secondary",
   };
 
   const getButtonText = (): string => {
-    if (status === "downloading") return `DOWNLOADING... ${progress}%`;
-    if (status === "success") return "✓ DOWNLOADED";
-    if (status === "error") return "⚠ RETRY";
-    if (useFallback) return "📄 VIEW CV";
-    return children?.toString() || "DOWNLOAD CV";
+    if (status === "downloading") return t("downloading", { progress });
+    if (status === "success") return t("downloaded");
+    if (status === "error") return t("retry");
+    if (useFallback) return t("view");
+    return children?.toString() || t("download");
   };
 
   const isDisabled: boolean = disabled || status === "downloading" || status === "success";
@@ -55,15 +58,16 @@ export default function DownloadCVButton({
   };
 
   return (
-    <div className="flex flex-col items-start">
+    <div className="flex w-full flex-col items-stretch sm:w-auto sm:items-start">
       <button
         type="button"
+        data-magnetic=""
         onClick={status === "error" ? handleRetry : handleClick}
         disabled={isDisabled && !useFallback}
         className={`${baseStyles} ${variantStyles[variant]} ${className} ${
           isDisabled && !useFallback ? "opacity-70 cursor-not-allowed" : ""
         } ${status === "error" ? "border-red-500 text-red-500" : ""}`}
-        aria-label={ariaLabel}
+        aria-label={ariaLabel || t("download")}
       >
         {status === "downloading" && (
           <svg className="animate-spin h-4 w-4" viewBox="0 0 24 24" aria-hidden="true">

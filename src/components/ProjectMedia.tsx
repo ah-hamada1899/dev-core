@@ -22,6 +22,7 @@ export default function ProjectMedia({
           fill
           className="project-image object-cover object-top transition-transform duration-700 ease-out"
           sizes={sizes}
+          key={typeof project.image === "string" ? project.image : project.image.src}
         />
       </div>
     );

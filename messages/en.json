@@ -1,0 +1,279 @@
+{
+  "nav": {
+    "home": "Home",
+    "projects": "Projects",
+    "skills": "Skills",
+    "contact": "Contact",
+    "hire": "Contact Me",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "homeAria": "Go to home page"
+  },
+  "theme": {
+    "label": "Theme",
+    "light": "Light",
+    "dark": "Dark",
+    "switchToLight": "Switch to light theme",
+    "switchToDark": "Switch to dark theme"
+  },
+  "locale": {
+    "label": "Language",
+    "en": "EN",
+    "ar": "AR",
+    "switchToEn": "Switch language to English",
+    "switchToAr": "Switch language to Arabic"
+  },
+  "site": {
+    "location": "Giza, Egypt",
+    "availability": "Open to Software Developer / Node.js roles"
+  },
+  "footer": {
+    "built": "Built in {location}.",
+    "cv": "CV"
+  },
+  "cv": {
+    "download": "Download CV",
+    "downloading": "Downloading... {progress}%",
+    "downloaded": "Downloaded",
+    "retry": "Retry",
+    "view": "View CV"
+  },
+  "home": {
+    "kicker": "{role} · {location}",
+    "title": "{name}.",
+    "titleAccent": "Real products",
+    "titleEnd": ", live on the web.",
+    "summary": "Software developer in Giza, Egypt. I ship React, Next.js, Node.js, Express, and PostgreSQL products for legal, operations, CRM, and HR teams — plus personal apps that are live on the web.",
+    "viewProjects": "View projects",
+    "photoAlt": "{name} at a development workstation",
+    "stack": "Current stack",
+    "projectsTitle": "Projects",
+    "projectsKicker": "Selected work",
+    "projectsLead": "Three live products. The full catalog is on the projects page.",
+    "viewAll": "View more",
+    "viewCatalog": "View all projects",
+    "aboutQuote": "I build production software — bilingual AR/EN sites, dashboards, CRM, Node.js APIs, and Arabic RTL HR tools. Before that I shipped Next.js work remotely for Springer Capital.",
+    "bilingualTitle": "Arabic / English",
+    "bilingualBody": "RTL layouts, next-intl, and UI that works for Egyptian and Gulf teams.",
+    "perfTitle": "Performance first",
+    "perfBody": "App Router, SSR/SSG/ISR, Core Web Vitals, and code splitting on every ship.",
+    "ctaTitle": "Let's ship the next one.",
+    "ctaBody": "{availability}. Node.js, Next.js, and product work worldwide.",
+    "ctaButton": "Start a conversation",
+    "stats": {
+      "aria": "Key facts",
+      "seo": "SEO",
+      "projects": "Projects",
+      "satisfaction": "Satisfaction Rate",
+      "available": "Available"
+    }
+  },
+  "projectsPage": {
+    "kicker": "Selected work",
+    "title": "Selected Projects",
+    "lead": "Products and sites I designed, built, and shipped — each card links out to the live website when I have one.",
+    "search": "Search projects",
+    "searchPlaceholder": "Search stack, title, website...",
+    "empty": "No projects match that search.",
+    "ctaTitle": "Intrigued by the craft?",
+    "ctaBody": "Need a bilingual product, API, dashboard, or marketing site? I can take it from design to deploy.",
+    "start": "Start a project",
+    "downloadCv": "Download CV"
+  },
+  "projectCard": {
+    "viewCase": "View case",
+    "openLive": "Open {host}",
+    "screenshotAlt": "{title} website screenshot"
+  },
+  "projectDetail": {
+    "allProjects": "All projects",
+    "whatIBuilt": "What I built",
+    "role": "Role",
+    "company": "Company",
+    "stack": "Stack",
+    "openLive": "Open live site",
+    "viewGithub": "View on GitHub",
+    "internal": "Internal Ellwaa product — not public.",
+    "more": "More from the archive",
+    "viewAll": "View all",
+    "notFoundTitle": "Project not found",
+    "notFoundBody": "That case study is not in the archive. Browse the full list instead.",
+    "back": "Back to projects"
+  },
+  "skills": {
+    "kicker": "Technical expertise",
+    "title": "Skills & Technologies",
+    "lead": "The stack I actually use on Ellwaa products and personal Node.js / Next.js apps — not a wishlist.",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "state": "State & Data",
+    "i18n": "i18n & UX",
+    "perf": "Performance & DX",
+    "ctaTitle": "Ready to build something great?",
+    "ctaBody": "Need a bilingual product, API, dashboard, or marketing site? Let's talk.",
+    "ctaButton": "Get in touch"
+  },
+  "contact": {
+    "title": "Let's build something",
+    "titleAccent": "extraordinary",
+    "lead": "Send a project brief, a role, or a quick hello — I read everything. Based in Giza, remote-ready.",
+    "name": "Full name",
+    "namePlaceholder": "Your name",
+    "email": "Email address",
+    "emailPlaceholder": "you@company.com",
+    "subject": "Subject",
+    "subjectPlaceholder": "Project inquiry",
+    "message": "Message",
+    "messagePlaceholder": "Tell me about the product, timeline, and stack...",
+    "send": "Send message",
+    "sending": "Opening mail...",
+    "sent": "Mail client opened",
+    "direct": "Direct contact",
+    "phone": "Phone",
+    "location": "Location",
+    "locationValue": "{location} · Remote",
+    "footprint": "Digital footprint",
+    "defaultSubject": "Project inquiry"
+  },
+  "roles": {
+    "software": "Software Developer",
+    "solo": "Solo developer"
+  },
+  "companies": {
+    "ellwaa": "Ellwaa Software"
+  },
+  "projects": {
+    "ellwaa-website": {
+      "title": "Ellwaa Corporate Website",
+      "subtitle": "Bilingual legal & company-formation platform",
+      "description": "Production Next.js site for Ellwaa — industries, careers, insights, blogs, and contact flows in Arabic and English with full RTL.",
+      "longDescription": "I develop and maintain ellwaa.com inside Ellwaa’s Turbo monorepo. The site is a Next.js App Router marketing and content platform with next-intl, Tailwind CSS, and bilingual Arabic/English (RTL) layouts covering industries, careers, insights, blogs, and contact.",
+      "category": "Marketing",
+      "highlights": [
+        "App Router pages for industries, careers, insights, blogs, and contact",
+        "Arabic/English with next-intl and first-class RTL layout",
+        "Shipped in Agile/Jira sprints inside a Turbo monorepo"
+      ]
+    },
+    "los-reyes": {
+      "title": "LOS REYES Tourism",
+      "subtitle": "Egypt travel and trip planning",
+      "description": "Next.js tourism site for Egypt — destinations, experiences, trip planning, Framer Motion, and booking emails via Resend and React Email.",
+      "longDescription": "Personal tourism website for travel in Egypt. Built with Next.js App Router, TypeScript, and i18n: destination and experience routing, trip planning, inquiry forms, Framer Motion, and booking emails through Resend and React Email.",
+      "category": "Travel",
+      "highlights": [
+        "Destination and experience routing with trip planning",
+        "Inquiry forms and booking emails via Resend + React Email",
+        "Framer Motion and bilingual-ready App Router structure"
+      ]
+    },
+    "assis-website": {
+      "title": "Assis Website",
+      "subtitle": "Company-formation product site",
+      "description": "Bilingual Assis marketing and onboarding website — Next.js, next-intl, forms, and RTL — for launching a company online with Ellwaa’s Assis service.",
+      "longDescription": "Assis is Ellwaa’s digital company-formation service. I built the public website in Next.js and TypeScript with next-intl, Zod-validated forms, Framer Motion, and a bilingual Arabic/English experience that walks founders through formation.",
+      "category": "Marketing",
+      "highlights": [
+        "Next.js App Router with next-intl and RTL",
+        "Validated inquiry and onboarding forms (React Hook Form + Zod)",
+        "Motion-led marketing sections for the Assis product"
+      ]
+    },
+    "sales-crm": {
+      "title": "Sales CRM",
+      "subtitle": "Lead pipeline and bulk assignment",
+      "description": "Sales CRM frontend on REST APIs — lead pipeline, bulk assignment, user management, TanStack Query caching, and Zustand, with Zoho CRM integration.",
+      "longDescription": "Internal sales CRM used by Ellwaa teams. I implemented the frontend against REST APIs: lead pipeline, bulk assignment, user management, TanStack Query caching, Zustand state, and staging/production deploys. Contracts include Zoho CRM integrations.",
+      "category": "CRM",
+      "highlights": [
+        "Lead pipeline and bulk assignment flows",
+        "TanStack Query caching and Zustand state",
+        "Zoho CRM integration and staging/production deploys"
+      ]
+    },
+    "assis-dashboard": {
+      "title": "Assis Operations Dashboard",
+      "subtitle": "Client, project, and team administration",
+      "description": "React + Vite operations console: clients, projects, onboarding, user admin, audit-log export, and role-based access in Arabic and English.",
+      "longDescription": "Assis is Ellwaa’s internal operations product. I built the dashboard UI in React, TypeScript, and Vite — client management, project tracking, onboarding, user administration, audit-log export, and RBAC — with a bilingual Arabic/English interface.",
+      "category": "Dashboard",
+      "highlights": [
+        "Client, project, and onboarding workflows",
+        "User administration, audit-log export, and RBAC",
+        "Arabic/English UI with Vite, TypeScript, and React Router"
+      ]
+    },
+    "assis-brands": {
+      "title": "Assis for Brands",
+      "subtitle": "AI customer care for e-commerce",
+      "description": "Marketing site for Assis — an AI customer assistant for high-AOV stores, with demo booking, results, and channel integrations.",
+      "longDescription": "A Vite + React marketing site for Assis as a customer-care product for e-commerce brands. I built the public pages: positioning, methodology, reviews, pricing narrative, and demo/get-started flows.",
+      "category": "Marketing",
+      "highlights": [
+        "Vite + React + TypeScript marketing site",
+        "Demo and get-started flows for Shopify-focused brands",
+        "Live on Vercel at assis-website.vercel.app"
+      ]
+    },
+    "internal-hr": {
+      "title": "Internal HR Portal",
+      "subtitle": "Arabic-first people operations",
+      "description": "Arabic RTL HR portal for employees, attendance, departments, offices, and tasks — React Query against the internal people API.",
+      "longDescription": "An Arabic-first HR portal for Ellwaa. I shipped the frontend with React, TypeScript, and TanStack Query for employees, attendance, departments, offices, and tasks, with ADMIN/HR role views and an RTL layout.",
+      "category": "HR",
+      "highlights": [
+        "Employees, attendance, departments, offices, and tasks",
+        "Arabic RTL interface with ADMIN and HR roles",
+        "React Query data layer against the internal people API"
+      ]
+    },
+    "internal-tickets": {
+      "title": "Internal Ticket Desk",
+      "subtitle": "Ellwaa support and ops tickets",
+      "description": "React + TypeScript SPA for Ellwaa’s internal ticket desk — queues, assignment, and status — talking to the Ticket System API.",
+      "longDescription": "Internal ticket desk for Ellwaa operations. I built a React and TypeScript SPA that talks to the Ticket System API: queues, assignment, status, and session-aware API proxying so cookies stay on localhost in development.",
+      "category": "Operations",
+      "highlights": [
+        "Ticket queues, assignment, and status workflows",
+        "Typed SPA against the Ticket System API",
+        "Dev proxy that keeps session cookies on localhost"
+      ]
+    },
+    "whatsapp-instances": {
+      "title": "WhatsApp Instances",
+      "subtitle": "Instance and session console",
+      "description": "Internal console to manage WhatsApp instances — create, monitor, and control sessions with React Hook Form, Zod, and TanStack Query.",
+      "longDescription": "An internal Vite + React console for managing WhatsApp instances. I built the UI for creating, monitoring, and controlling sessions with React Hook Form, Zod validation, TanStack Query, and Radix dialogs.",
+      "category": "Operations",
+      "highlights": [
+        "Instance create, monitor, and control flows",
+        "React Hook Form + Zod validation",
+        "TanStack Query against the instances API"
+      ]
+    },
+    "sales-dashboard": {
+      "title": "Sales Analytics Dashboard",
+      "subtitle": "Charts, filters, and data toggle",
+      "description": "Interactive Next.js dashboard with bar, line, and pie charts, year and threshold filters, mock/API toggle, atomic design, and dark mode.",
+      "longDescription": "A personal analytics dashboard for exploring sales data. I built it in Next.js and TypeScript with Recharts, Tailwind CSS, year and threshold filters, a mock/API data toggle, atomic components, and dark mode.",
+      "category": "Analytics",
+      "highlights": [
+        "Bar, line, and pie charts with Recharts",
+        "Year and threshold filters plus mock/API toggle",
+        "Atomic design system and dark mode"
+      ]
+    },
+    "flash-tech": {
+      "title": "FlashTech Store",
+      "subtitle": "High-voltage hardware shop",
+      "description": "TypeScript storefront for performance hardware — categories, featured products, and a high-contrast shopping experience.",
+      "longDescription": "A personal e-commerce concept for performance hardware. FlashTech is a TypeScript storefront with category browsing, featured products, and a high-contrast shopping UI deployed on Vercel.",
+      "category": "Commerce",
+      "highlights": [
+        "Category browsing for laptops, monitors, and components",
+        "Featured product grid with pricing and stock states",
+        "Live Vercel deployment"
+      ]
+    }
+  }
+}

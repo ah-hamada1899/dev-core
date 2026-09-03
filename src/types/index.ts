@@ -28,7 +28,7 @@ export interface Project {
   role: string;
   liveUrl?: string;
   githubUrl?: string;
-  image?: string;
+  image?: string | import("next/image").StaticImageData;
   icon: string;
   accent: "lavender" | "gold" | "teal" | "rose" | "slate" | "amber";
 }
