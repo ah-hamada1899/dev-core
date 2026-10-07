@@ -25,7 +25,7 @@
   },
   "site": {
     "location": "Giza, Egypt",
-    "availability": "Open to Software Developer / Node.js roles"
+    "availability": "Open to Full-Stack Developer roles"
   },
   "footer": {
     "built": "Built in {location}.",
@@ -43,16 +43,16 @@
     "title": "{name}.",
     "titleAccent": "Real products",
     "titleEnd": ", live on the web.",
-    "summary": "Software developer in Giza, Egypt. I ship React, Next.js, Node.js, Express, and PostgreSQL products for legal, operations, CRM, and HR teams — plus personal apps that are live on the web.",
+    "summary": "Full-Stack Developer in Giza, Egypt. I ship React, Next.js, Node.js, Express, and PostgreSQL products for legal, operations, CRM, and HR teams — including an OAuth 2.0 / OIDC single sign-on ecosystem — plus personal apps that are live on the web.",
     "viewProjects": "View projects",
     "photoAlt": "{name} at a development workstation",
     "stack": "Current stack",
     "projectsTitle": "Projects",
     "projectsKicker": "Selected work",
-    "projectsLead": "Three live products. The full catalog is on the projects page.",
+    "projectsLead": "Three flagship products. The full catalog is on the projects page.",
     "viewAll": "View more",
     "viewCatalog": "View all projects",
-    "aboutQuote": "I build production software — bilingual AR/EN sites, dashboards, CRM, Node.js APIs, and Arabic RTL HR tools. Before that I shipped Next.js work remotely for Springer Capital.",
+    "aboutQuote": "I build production software — an OAuth 2.0 / OIDC SSO ecosystem across five internal systems, bilingual AR/EN sites, dashboards, CRM, Node.js APIs, and Arabic RTL HR tools. Before that I shipped Next.js work remotely for Springer Capital.",
     "bilingualTitle": "Arabic / English",
     "bilingualBody": "RTL layouts, next-intl, and UI that works for Egyptian and Gulf teams.",
     "perfTitle": "Performance first",
@@ -136,7 +136,7 @@
     "defaultSubject": "Project inquiry"
   },
   "roles": {
-    "software": "Software Developer",
+    "software": "Full-Stack Developer",
     "solo": "Solo developer"
   },
   "companies": {
@@ -171,11 +171,11 @@
       "title": "Assis Website",
       "subtitle": "Company-formation product site",
       "description": "Bilingual Assis marketing and onboarding website — Next.js, next-intl, forms, and RTL — for launching a company online with Ellwaa’s Assis service.",
-      "longDescription": "Assis is Ellwaa’s digital company-formation service. I built the public website in Next.js and TypeScript with next-intl, Zod-validated forms, Framer Motion, and a bilingual Arabic/English experience that walks founders through formation.",
+      "longDescription": "Assis is Ellwaa’s digital company-formation service. I built the public website in Next.js and TypeScript with next-intl, Zod-validated forms on both client and server, hosted Moyasar payment checkout, Framer Motion, and a bilingual Arabic/English experience that walks founders through formation.",
       "category": "Marketing",
       "highlights": [
         "Next.js App Router with next-intl and RTL",
-        "Validated inquiry and onboarding forms (React Hook Form + Zod)",
+        "Zod validation on client and server, with Moyasar checkout",
         "Motion-led marketing sections for the Assis product"
       ]
     },
@@ -183,11 +183,11 @@
       "title": "Sales CRM",
       "subtitle": "Lead pipeline and bulk assignment",
       "description": "Sales CRM frontend on REST APIs — lead pipeline, bulk assignment, user management, TanStack Query caching, and Zustand, with Zoho CRM integration.",
-      "longDescription": "Internal sales CRM used by Ellwaa teams. I implemented the frontend against REST APIs: lead pipeline, bulk assignment, user management, TanStack Query caching, Zustand state, and staging/production deploys. Contracts include Zoho CRM integrations.",
+      "longDescription": "Internal sales CRM used by Ellwaa teams. I implemented the frontend against REST APIs: lead pipeline, bulk assignment, user management, TanStack Query caching, Zustand state, and staging/production deploys. Login runs over OIDC with PKCE, and contracts include Zoho CRM integrations.",
       "category": "CRM",
       "highlights": [
         "Lead pipeline and bulk assignment flows",
-        "TanStack Query caching and Zustand state",
+        "OIDC (PKCE) login, TanStack Query caching, and Zustand state",
         "Zoho CRM integration and staging/production deploys"
       ]
     },
@@ -219,24 +219,24 @@
       "title": "Internal HR Portal",
       "subtitle": "Arabic-first people operations",
       "description": "Arabic RTL HR portal for employees, attendance, departments, offices, and tasks — React Query against the internal people API.",
-      "longDescription": "An Arabic-first HR portal for Ellwaa. I shipped the frontend with React, TypeScript, and TanStack Query for employees, attendance, departments, offices, and tasks, with ADMIN/HR role views and an RTL layout.",
+      "longDescription": "An Arabic-first HR portal for Ellwaa. I shipped the frontend with React, TypeScript, and TanStack Query for employees, attendance, departments, offices, and tasks, with ADMIN/HR role views, ExcelJS XLSX/CSV report exports, and an RTL layout.",
       "category": "HR",
       "highlights": [
         "Employees, attendance, departments, offices, and tasks",
         "Arabic RTL interface with ADMIN and HR roles",
-        "React Query data layer against the internal people API"
+        "ExcelJS XLSX/CSV report exports and real-time updates"
       ]
     },
     "internal-tickets": {
       "title": "Internal Ticket Desk",
       "subtitle": "Ellwaa support and ops tickets",
-      "description": "React + TypeScript SPA for Ellwaa’s internal ticket desk — queues, assignment, and status — talking to the Ticket System API.",
-      "longDescription": "Internal ticket desk for Ellwaa operations. I built a React and TypeScript SPA that talks to the Ticket System API: queues, assignment, status, and session-aware API proxying so cookies stay on localhost in development.",
+      "description": "React + TypeScript SPA for Ellwaa’s internal ticket desk — queues, assignment, real-time notifications, and status — talking to the Ticket System API.",
+      "longDescription": "Internal ticket desk for Ellwaa operations. I built a React and TypeScript SPA that talks to the Ticket System API: queues, assignment, status, messages, attachments, real-time WebSocket notifications, and audit logs — with role-based views, typed API wrappers, and SSO sign-in through the central identity provider.",
       "category": "Operations",
       "highlights": [
-        "Ticket queues, assignment, and status workflows",
-        "Typed SPA against the Ticket System API",
-        "Dev proxy that keeps session cookies on localhost"
+        "Ticket queues, assignment, status, and audit workflows",
+        "Real-time WebSocket notifications and role-based views",
+        "SSO sign-in through the central identity provider"
       ]
     },
     "whatsapp-instances": {
@@ -273,6 +273,66 @@
         "Category browsing for laptops, monitors, and components",
         "Featured product grid with pricing and stock states",
         "Live Vercel deployment"
+      ]
+    },
+    "sso-identity": {
+      "title": "SSO & Identity Ecosystem",
+      "subtitle": "One login across five internal systems",
+      "description": "OAuth 2.0 / OIDC single sign-on across five internal systems — one-time authorization codes exchanged server-to-server for RS256-signed tokens, PKCE, and per-user access control.",
+      "longDescription": "I designed and delivered single sign-on across five internal systems (HR, sales CRM, ticketing, LOHO, and account-manager). An OAuth 2.0 / OIDC identity provider issues one-time authorization codes that satellites exchange server-to-server for RS256-signed tokens. A launcher opens every system without a second login, with PKCE, code replay rejection, dual acceptance of local and central IdP tokens, per-user system assignment, and role re-sync from IdP claims — verified by 27/27 launcher checks and passing end-to-end suites on every satellite.",
+      "category": "Infrastructure",
+      "highlights": [
+        "OAuth 2.0 / OIDC identity provider with RS256-signed tokens and PKCE",
+        "Launcher SSO into five systems: 27/27 launcher checks, green e2e per satellite",
+        "Per-user system assignment and role re-sync from IdP claims"
+      ]
+    },
+    "null-clothing": {
+      "title": "NULL Clothing",
+      "subtitle": "Full-stack e-commerce",
+      "description": "Full-stack e-commerce storefront — filtering, persistent guest carts with account merging, checkout, JWT auth in HTTP-only cookies, and transactional orders on PostgreSQL.",
+      "longDescription": "A personal full-stack e-commerce build with Next.js, TypeScript, and Node.js on PostgreSQL and Prisma. The storefront covers product filtering, sorting, pagination, persistent guest carts that merge into the account on login, checkout order creation, and order history. REST APIs are implemented with Next.js Route Handlers, bcrypt password hashing, JWT sessions in HTTP-only cookies, and Zod validation; orders and cart clearing run in Prisma transactions, with migrations, seed data, and a Docker Compose database environment.",
+      "category": "Commerce",
+      "highlights": [
+        "Filtering, sorting, persistent guest carts, and account cart merging",
+        "REST APIs with JWT in HTTP-only cookies, bcrypt, and Zod validation",
+        "Prisma transactions for atomic order creation and cart clearing"
+      ]
+    },
+    "account-manager": {
+      "title": "Account Manager Platform",
+      "subtitle": "Identity, permissions, and business modules",
+      "description": "Central identity & business platform — Express, TypeScript, Drizzle ORM, and PostgreSQL with JWT access tokens, rotated hashed refresh tokens, and granular permissions.",
+      "longDescription": "I built the central account-manager platform: an Express + TypeScript API on PostgreSQL with Drizzle ORM. Authentication uses JWT access tokens plus rotated, hashed refresh tokens stored in the database and revoked on logout and password change. A granular permission catalog (users, roles, leads, tickets, reports, audit logs) is enforced by authorize middleware, on top of business modules for accounts, projects, contacts, documents, and payments — with Zod validation, Helmet, Redis-backed rate limiting, Pino logging, and Swagger documentation.",
+      "category": "Identity",
+      "highlights": [
+        "JWT access tokens with rotated, hashed refresh tokens",
+        "Granular permission catalog enforced by authorize middleware",
+        "Accounts, projects, contacts, documents, and payments modules"
+      ]
+    },
+    "daily-reports": {
+      "title": "Daily Reports Ops Platform",
+      "subtitle": "Google Sheets and Zoho Projects in one dashboard",
+      "description": "Internal operations platform integrating Google Sheets and Zoho Projects — JWT auth, Redis caching, admin-triggered syncs, audit logs, and dependency health monitoring.",
+      "longDescription": "I built an internal Daily Reports operations platform that integrates Google Sheets and Zoho Projects for non-technical users: big-number KPI views with drill-down tables, JWT authentication with session recovery, Redis caching, admin-triggered syncs with auto-polling, a password-protected quality board, report history, audit logs, and dependency health monitoring — bilingual with Arabic-first RTL.",
+      "category": "Operations",
+      "highlights": [
+        "Google Sheets and Zoho Projects integrations in one bilingual dashboard",
+        "Admin syncs with auto-polling, audit logs, and dependency health",
+        "JWT auth, Redis caching, and Arabic-first RTL for non-technical users"
+      ]
+    },
+    "loho-ops": {
+      "title": "LOHO Operations Web App",
+      "subtitle": "Leads, tickets, users, and permissions",
+      "description": "Internal operations app — dashboard, leads, tickets, users, roles, and permissions with auth and role route guards, and SSO as an identity-provider satellite.",
+      "longDescription": "LOHO is an internal operations system I built with React, TypeScript, and Vite: a dashboard plus leads, tickets, users, roles, and permissions modules. Route guards (AuthGuard / RoleRoute) enforce authentication and role-based access, and the app signs in over SSO as a satellite of the central account-manager identity provider.",
+      "category": "Operations",
+      "highlights": [
+        "Dashboard, leads, tickets, users, roles, and permissions modules",
+        "AuthGuard / RoleRoute guards for role-based access",
+        "SSO sign-in as an identity-provider satellite"
       ]
     }
   }
