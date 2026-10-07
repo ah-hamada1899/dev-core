@@ -125,7 +125,7 @@ export default function HomeHero(): React.ReactElement {
               data-hero-kicker=""
               className="font-body-md text-[15px] font-semibold leading-relaxed tracking-wide text-primary md:text-xl"
             >
-              {t("kicker", { role: "Software Developer", location: "Giza, Egypt" })}
+              {t("kicker", { role: "Full-Stack Developer", location: "Giza, Egypt" })}
             </span>
           </div>
           <h1

@@ -4,14 +4,14 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL("https://dev-core-kappa.vercel.app"),
   title: {
-    default: "Ahmed Hamada | Software Developer — DEV_CORE",
+    default: "Ahmed Hamada | Full-Stack Developer — DEV_CORE",
     template: "%s | DEV_CORE",
   },
   description:
     "Software developer in Giza, Egypt. React, Next.js, Node.js, Express, and PostgreSQL — bilingual products, dashboards, CRM, and marketing sites.",
   keywords: [
     "Ahmed Hamada",
-    "Software Developer",
+    "Full-Stack Developer",
     "React",
     "Next.js",
     "Node.js",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://dev-core-kappa.vercel.app",
     siteName: "DEV_CORE",
-    title: "Ahmed Hamada | Software Developer",
+    title: "Ahmed Hamada | Full-Stack Developer",
     description:
       "Bilingual products, dashboards, and marketing sites built with React, Next.js, Node.js, Express, and PostgreSQL.",
     images: [
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ahmed Hamada | Software Developer",
+    title: "Ahmed Hamada | Full-Stack Developer",
     description:
       "Bilingual products, dashboards, and marketing sites built with React, Next.js, Node.js, Express, and PostgreSQL.",
     images: ["/og-image.png"],
